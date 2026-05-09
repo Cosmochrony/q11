@@ -55,7 +55,7 @@ Identification of $A_\tau = 2$\\[6pt]
     Third, Schur's lemma forces the unique $\SU(2)$-invariant quadratic form on $\Sym^2(V_\rho)$
     to be proportional to the Casimir $\mathcal{C}_{\su(2)} = 2\cdot\mathrm{Id}$,
     and Q8~\cite{BeauQ8} fixes the normalisation scalar to unity.
-    The effective co-metric is therefore fully determined:
+    The effective co-metric is therefore uniquely determined:
     $g^{\mu\nu} = 2\,\eta^{\mu\nu}$.
     No free parameter remains.
     The temporal direction is not an additional geometric axis; it is the continuum
@@ -225,16 +225,23 @@ Identification of $A_\tau = 2$\\[6pt]
 
       \begin{proof}
         By Q5b Remark~3.3~\cite{Beau2026q5b}, $\tau$ is identified with the BFS depth index $n$.
-        The continuum limit is established by Q5b Theorem~3.2~\cite{Beau2026q5b} (following
-        Pansu~\cite{Pansu1989}): in the limit $q\to\infty$ with $n = \lfloor r q^\alpha\rfloor$
-        for $\alpha < 1$, the discrete BFS metric space converges to the Carnot--Carath\'eodory
-        space $(\Heis_3(\mathbb{R}), d_{\mathrm{CC}})$ in the Gromov--Hausdorff sense.
+        The Carnot--Carath\'eodory passage to the continuum is Q5b Theorem~3.2~\cite{Beau2026q5b}
+        (following Pansu~\cite{Pansu1989}): in the Gromov--Hausdorff limit $q\to\infty$ with
+        $n = \lfloor r q^\alpha\rfloor$ for $\alpha < 1$, the rescaled discrete BFS metric space
+        converges to the Carnot--Carath\'eodory space $(\Heis_3(\mathbb{R}), d_{\mathrm{CC}})$.
         Under this convergence, discrete differences $f(n+1) - f(n)$ pass to the continuum derivative
         $\partial_\tau f(\tau)$ for any sequence $f(n)$ that is Lipschitz in the BFS metric.
-        The fingerprint energies $\sigma_c(n)$ are Lipschitz in $n$ within the pre-saturation window
-        $n\leq n^*(q)$ (Q5a Hypothesis [H-E1]~\cite{Beau2026q5a}).
+        This passage is understood in the standard scaling limit of Carnot-group convergence:
+        Lipschitz observables on the rescaled BFS stratification converge to differentiable observables
+        on the limiting Carnot--Carath\'eodory space, and their finite differences converge to
+        the corresponding directional derivatives (see~\cite{Pansu1989}, Theorem~1.1).
+        The fingerprint energies $\sigma_c(n)$ satisfy this Lipschitz condition within the pre-saturation
+        window $n\leq n^*(q)$ by Q5a Hypothesis~[H-E1]~\cite{Beau2026q5a}.
         Since $T\,\sigma_c(n) = \sigma_c(n+1)$ and the domain of $T$ is $\Heff = \Sym^2(V_\rho)$,
         the derivation $\partial_\tau$ inherits the same domain.
+        The statement concerns the induced action on admissible observables in the Carnot scaling limit,
+        not operator-norm convergence on a fixed Hilbert space; the relevant topology is that of
+        pointwise convergence of Lipschitz functions under Gromov--Hausdorff rescaling.
       \end{proof}
 
       \begin{remark}
@@ -285,7 +292,7 @@ Identification of $A_\tau = 2$\\[6pt]
         \qquad\forall\,g\in\SU(2),
       \]
       as operators on $\Sym^2(V_\rho)$, uniformly for $n\leq n^*(q)$.
-      In the limit $q\to\infty$, $T$ is $\SU(2)$-equivariant.
+      In the limit $q\to\infty$, $T$ is effectively $\SU(2)$-equivariant.
     \end{proposition}
 
     \begin{proof}
@@ -298,9 +305,13 @@ Identification of $A_\tau = 2$\\[6pt]
         = \sigma_c(n+1) - \sigma^*(n+1)
         \;\leq\; \varepsilon(q)\,\sigma^*(n+1).
       \]
-      Since $\sigma^*(n)$ is $c$-independent, it is invariant under the $\SU(2)$-action on characters
-      (which permutes $c\in(\mathbb{Z}/q\mathbb{Z})^\times$).
-      For any $g\in\SU(2)$ acting as a permutation $\pi_g$ on characters,
+      Since $\sigma^*(n)$ is $c$-independent, it is invariant under any permutation of characters.
+      Here the $\SU(2)$-action on admissible characters is the effective action induced through the
+      bridge $\phi\colon\Sym^2(V_\rho)\to W_{\mathrm{sp}}$ of Q7~\cite{Beau2026q7}, acting on
+      admissible character sectors $c\in(\mathbb{Z}/q\mathbb{Z})^\times$ through the asymptotic
+      identification established in Q10~\cite{Beau2026q10}; it is not a literal action on multiplicative
+      characters, but its asymptotic effect is to permute the index $c$ among admissible sectors.
+      Denoting by $\pi_g$ this effective permutation for $g\in\SU(2)$,
       \begin{align*}
         \bigl\|T(\rho(g)\,\sigma_c(n)) - \rho(g)(T\,\sigma_c(n))\bigr\|
         &= \bigl\|\sigma_{\pi_g(c)}(n+1) - \sigma_{\pi_g(c)}(n+1)\bigr\|
@@ -312,9 +323,11 @@ Identification of $A_\tau = 2$\\[6pt]
     \begin{remark}
       Proposition~\ref{prop:equivariance} is the representation-theoretic reading of [U].
       Analytically, [U] asserts uniform $c$-independence of the spectral profiles.
-      Categorically, it asserts that the cascade morphism $T$ commutes with the $\SU(2)$-action
+      Categorically, it asserts that the cascade morphism $T$ commutes with the effective $\SU(2)$-action
       in the limit.
       These are equivalent statements; the categorical reading is what enters the Schur argument.
+      This reformulation upgrades spectral universality from an analytic concentration property to
+      an asymptotic intertwining property of the admissible cascade itself.
     \end{remark}
 
   \section{Schur Rigidity and Proof of Theorem~\ref{thm:main}}
@@ -346,34 +359,37 @@ Identification of $A_\tau = 2$\\[6pt]
     \subsection{Proof of Theorem~\ref{thm:main}}
 
       \begin{proof}[Proof of Theorem~\ref{thm:main}]
-        The effective co-metric coefficient $A_\tau$ is the coefficient of $k_\tau^2$ in the principal
-        symbol $\sigma_2(\Leff)$ of the effective operator (Q5b Theorem~5.2~\cite{Beau2026q5b}).
-        It is therefore the normalisation scalar of the quadratic form on the $\tau$-sector of
-        $T^*(\mathbb{R}_\tau\times\Heis_3(\mathbb{R}))$.
+The effective co-metric coefficient $A_\tau$ is the coefficient of $k_\tau^2$ in the principal
+symbol $\sigma_2(\Leff)$ of the effective operator (Q5b Theorem~5.2~\cite{Beau2026q5b}).
+It is therefore the normalisation scalar of the quadratic form on the $\tau$-sector of
+$T^*(\mathbb{R}_\tau\times\Heis_3(\mathbb{R}))$.
 
-        \emph{Step~1 (Internalization).}
-        By Lemma~\ref{lem:internalization}, $\partial_\tau$ is the continuum limit of $T$ acting on
-        $\Heff = \Sym^2(V_\rho)$.
-        By Corollary~\ref{cor:no-new-rep}, the $\tau$-sector carries the trivial $\SU(2)$-representation
-        $\mathbf{1}$, and the full $\tau$-module is $\mathbf{1}\otimes\Sym^2(V_\rho)\cong\Sym^2(V_\rho)$.
+\emph{Step~1 (Internalization).}
+By Lemma~\ref{lem:internalization}, $\partial_\tau$ is the continuum limit of $T$ acting on
+$\Heff = \Sym^2(V_\rho)$.
+By Corollary~\ref{cor:no-new-rep}, the $\tau$-sector carries the trivial $\SU(2)$-representation
+$\mathbf{1}$, and the full $\tau$-module is $\mathbf{1}\otimes\Sym^2(V_\rho)\cong\Sym^2(V_\rho)$.
 
-        \emph{Step~2 (Equivariance).}
-        By Proposition~\ref{prop:equivariance}, $T$ is asymptotically $\SU(2)$-equivariant under [U].
-        In the limit $q\to\infty$, the quadratic form defined by $A_\tau k_\tau^2$ on the $\tau$-sector
-        must be $\SU(2)$-invariant.
+\emph{Step~2 (Equivariance).}
+By Proposition~\ref{prop:equivariance}, $T$ is asymptotically $\SU(2)$-equivariant under [U].
+In the limit $q\to\infty$, the quadratic form defined by $A_\tau k_\tau^2$ on the $\tau$-sector
+must be $\SU(2)$-invariant.
 
-        \emph{Step~3 (Schur).}
-        By Proposition~\ref{prop:schur}, every $\SU(2)$-invariant quadratic form on $\Sym^2(V_\rho)$
-        is $\alpha\,\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)}$ for some scalar $\alpha$.
+\emph{Step~3 (Schur).}
+By Proposition~\ref{prop:schur}, every $\SU(2)$-invariant quadratic form on $\Sym^2(V_\rho)$
+is $\alpha\,\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)}$ for some scalar $\alpha$.
 
-        \emph{Step~4 (Normalisation).}
-        The bridge $\phi\colon\Heff\xrightarrow{\sim}W_{\mathrm{sp}}$ of Q7~\cite{Beau2026q7} is unique
-        up to positive scalar, with normalisation fixed by the Casimir eigenvalue
-        $\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)} = 2$ (Q8~\cite{BeauQ8}).
-        Since $\partial_\tau$ is the continuum limit of the same cascade $T$ that enters the spatial bridge
-        (Step~1), the scalar $\alpha$ is the same in both sectors.
-        Q8 establishes $\alpha = 1$ for the spatial sectors (giving $A_Z = A_H = 2$).
-        Therefore $\alpha = 1$ in the $\tau$-sector as well, and $A_\tau = \mathcal{C}_{\su(2)} = 2$.
+\emph{Step~4 (Normalisation).}
+The bridge $\phi\colon\Heff\xrightarrow{\sim}W_{\mathrm{sp}}$ of Q7~\cite{Beau2026q7} is unique
+up to positive scalar, with normalisation fixed by the Casimir eigenvalue
+$\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)} = 2$ (Q8~\cite{BeauQ8}).
+Since $\partial_\tau$ is the continuum limit of the same cascade $T$ that enters the spatial bridge
+(Step~1), the scalar $\alpha$ is the same in both sectors:
+no independent normalisation can arise in the $\tau$-sector, since the temporal derivation is not
+an independent representation component but the infinitesimalisation of the same admissible
+cascade already fixing the spatial bridge normalisation.
+Q8 establishes $\alpha = 1$ for the spatial sectors (giving $A_Z = A_H = 2$).
+Therefore $\alpha = 1$ in the $\tau$-sector as well, and $A_\tau = \mathcal{C}_{\su(2)} = 2$.
       \end{proof}
 
   \section{Consequences}
@@ -401,22 +417,22 @@ Identification of $A_\tau = 2$\\[6pt]
       \end{proof}
 
       \begin{remark}[Structural significance of the conformal factor $2$]
-        The value $2$ is not a choice of units.
-        It is forced by the eigenvalue of the $\su(2)$-Casimir on the spin-$1$ module
-        $\Sym^2(V_\rho)$, which is the unique irreducible representation compatible with the
-        admissibility constraints (Q7~\cite{Beau2026q7}).
-        The same integer governs all four metric components: two horizontal Heisenberg directions
-        (Q10), the central Heisenberg direction (Q8), and the temporal direction (this paper).
-        This uniform emergence from a single representation-theoretic datum is the structural
-        content of the metric closure.
+The value $2$ is not a choice of units.
+It is forced by the eigenvalue of the $\su(2)$-Casimir on the spin-$1$ module
+$\Sym^2(V_\rho)$, which is the unique irreducible representation compatible with the
+admissibility constraints (Q7~\cite{Beau2026q7}).
+The same integer governs all four metric components: two horizontal Heisenberg directions
+(Q10), the central Heisenberg direction (Q8), and the temporal direction (this paper).
+This uniform emergence from a single representation-theoretic datum is the structural
+content of the metric closure.
       \end{remark}
 
     \subsection{Closure of Q5b-O3}
 
       \begin{corollary}[Resolution of Q5b-O3]
-        Open problem Q5b-O3 of~\cite{Beau2026q5b}---\emph{identify $A_\tau$ from the projective
-        temporal ordering data}---is closed: $A_\tau = 2$, derived from the cascade internalization
-        lemma, [U], and Q8.
+Open problem Q5b-O3 of~\cite{Beau2026q5b}---\emph{identify $A_\tau$ from the projective
+temporal ordering data}---is closed: $A_\tau = 2$, derived from the cascade internalization
+lemma, [U], and Q8.
       \end{corollary}
 
     \subsection{The complete derivation chain}
@@ -431,7 +447,7 @@ Identification of $A_\tau = 2$\\[6pt]
           $\downarrow$                       & \\
           Lemma~\ref{lem:internalization}    & $\partial_\tau \leftrightarrow T$ (cascade generator) \\
           $\downarrow$                       & \\
-          [U] + U1~\cite{Beau2026u1}         & $T$ is $\SU(2)$-equivariant \\
+          \textup{[U]} + U1~\cite{Beau2026u1} & $T$ is asymptotically $\SU(2)$-equivariant \\
           $\downarrow$                       & \\
           Proposition~\ref{prop:schur}       & unique $\SU(2)$-invariant form on $\Sym^2(V_\rho)$ \\
           $\downarrow$                       & \\
