@@ -1,0 +1,512 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{doi}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\End}{End}
+\newcommand{\Heff}{H_{\mathrm{eff}}}
+\newcommand{\Leff}{L_{\mathrm{eff}}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\Heis}{\mathrm{Heis}}
+\newcommand{\SU}{\mathrm{SU}}
+
+\title{Temporal Casimir Rigidity and Closure of the Effective Metric:\\
+Identification of $A_\tau = 2$\\[6pt]
+{\large Q11 of the Cosmochrony Spectral Geometry Programme}}
+
+\author{J\'er\^ome Beau\\
+\small Independent Researcher\\
+\small \texttt{jerome.beau@cosmochrony.org}}
+
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    Paper Q5b~\cite{Beau2026q5b} leaves the temporal coefficient $A_\tau$ of the effective co-metric
+    $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$ as the sole remaining free parameter of the
+    Cosmochrony spectral geometry programme (open problem Q5b-O3).
+    The present paper closes this problem by proving $A_\tau = 2$ under the Q5a
+    hypotheses~\cite{Beau2026q5a} and the spectral universality hypothesis~\cite{Beau2026u1}~[U].
+    The argument proceeds in three steps.
+    First, we establish a \emph{cascade internalization lemma}: the temporal coordinate $\tau$,
+    identified with the BFS depth index $n$ in Q5b Remark~3.3~\cite{Beau2026q5b}, has $\partial_\tau$
+    as the continuum limit of the cascade increment operator $T\colon \sigma_c(n)\mapsto\sigma_c(n+1)$
+    by the Carnot--Carath\'eodory convergence of Q5b Theorem~3.2 (Pansu~\cite{Pansu1989}).
+    This identification requires no new hypothesis.
+    Second, the O-series spectral universality [U], proved in U1~\cite{Beau2026u1}, implies that
+    $T$ is asymptotically $\SU(2)$-equivariant, so $\partial_\tau$ acts on
+    $\Sym^2(V_\rho)$ without introducing any new irreducible representation.
+    Third, Schur's lemma forces the unique $\SU(2)$-invariant quadratic form on $\Sym^2(V_\rho)$
+    to be proportional to the Casimir $\mathcal{C}_{\su(2)} = 2\cdot\mathrm{Id}$,
+    and Q8~\cite{BeauQ8} fixes the normalisation scalar to unity.
+    The effective co-metric is therefore fully determined:
+    $g^{\mu\nu} = 2\,\eta^{\mu\nu}$.
+    No free parameter remains.
+    The temporal direction is not an additional geometric axis; it is the continuum
+    infinitesimalisation of the admissible cascade itself.
+  \end{abstract}
+
+  \textbf{Keywords:} Heisenberg group; Weil representation; cascade generator; Carnot convergence;
+  Casimir operator; $\su(2)$-module; effective metric; temporal ordering; Cosmochrony.
+
+  \textbf{MSC 2020.} 22E25, 81R05, 53B30, 35H10, 22E70.
+
+  \tableofcontents
+
+  \newpage
+  \section{Introduction}
+    \label{sec:intro}
+
+    \subsection{The remaining open problem}
+
+      The chain of results Q5b--Q10 of the Cosmochrony spectral geometry programme establishes
+      an effective Lorentzian co-metric on $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$ of the form
+      \begin{equation}
+        g^{\mu\nu} = \mathrm{diag}(-A_\tau,\, 2,\, 2,\, 2),
+        \label{eq:metric-intro}
+      \end{equation}
+      where all three spatial coefficients equal $2$, forced by the $\su(2)$-Casimir
+      $\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)} = 2\cdot\mathrm{Id}$~\cite{BeauQ8,Beau2026q10}.
+      The single remaining unknown is the temporal coefficient $A_\tau > 0$,
+      which Q5b~\cite{Beau2026q5b} declares open as problem Q5b-O3: \emph{identify $A_\tau$ from
+  the projective temporal ordering data}~\cite{Beau2026pto}.
+      The present paper resolves Q5b-O3 by proving $A_\tau = 2$,
+      thereby closing $g^{\mu\nu} = 2\,\eta^{\mu\nu}$ with no free parameter.
+
+    \subsection{Main result}
+
+      \begin{theorem}[Temporal Casimir Rigidity]
+        \label{thm:main}
+        Under the Q5a hypotheses \textup{[H1], [H2], [H-w], [H-E1], [C]}~\cite{Beau2026q5a}
+        and the spectral universality hypothesis \textup{[U]} proved in
+        U1~\cite{Beau2026u1}, the temporal coefficient of the effective co-metric satisfies
+        \[
+          A_\tau = 2 = \mathcal{C}_{\su(2)}\big|_{\Sym^2(V_\rho)}.
+        \]
+        Consequently the effective co-metric on $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$ is
+        \[
+          g^{\mu\nu} = 2\,\eta^{\mu\nu},
+        \]
+        with no remaining free parameter.
+        Open problem Q5b-O3 of~\cite{Beau2026q5b} is closed.
+      \end{theorem}
+
+      The result is conditional on the same hypotheses as Q10~\cite{Beau2026q10}: no new assumption
+      is required beyond what is already in force.
+
+    \subsection{The key observation}
+
+      The proof rests on a single structural observation that was implicit in Q5b but not stated
+      explicitly.
+      Q5b Remark~3.3~\cite{Beau2026q5b} identifies $\tau$ with the BFS depth index $n$
+      (the projective ordering parameter from~\cite{Beau2026pto}).
+      By the Carnot--Carath\'eodory convergence theorem of Pansu~\cite{Pansu1989}
+      (Q5b Theorem~3.2~\cite{Beau2026q5b}), the discrete cascade increment
+      $T\colon\sigma_c(n)\mapsto\sigma_c(n+1)$ passes to the continuum derivative $\partial_\tau$
+      in the large-$q$ limit.
+      Consequently:
+      \begin{center}
+        \emph{$\partial_\tau$ is not an external geometric direction; it is the continuum
+        infinitesimalisation of the admissible cascade.}
+      \end{center}
+      This means $\partial_\tau$ acts on the same spectral space $\Sym^2(V_\rho)$ as the
+      horizontal directions, and the $\su(2)$-equivariance of $T$ (a consequence of [U]) forces
+      $\partial_\tau$ into the same representation-theoretic rigidity as the spatial coefficients.
+      Schur's lemma then eliminates $A_\tau$ as a free parameter.
+
+    \subsection{Organisation}
+
+      Section~\ref{sec:setup} fixes notation and recalls the relevant results of Q5b, Q7--Q10,
+      and U1.
+      Section~\ref{sec:internalization} establishes the cascade internalization lemma (Lemma~\ref{lem:internalization}).
+      Section~\ref{sec:equivariance} derives the asymptotic $\SU(2)$-equivariance of the cascade
+      generator from [U].
+      Section~\ref{sec:schur} applies Schur's lemma and completes the proof of Theorem~\ref{thm:main}.
+      Section~\ref{sec:consequences} draws the programme-level consequences.
+      Section~\ref{sec:summary} summarises the result and the remaining landscape.
+
+      \newpage
+  \section{Setup and Notation}
+    \label{sec:setup}
+
+    \subsection{Objects and standing hypotheses}
+
+      Fix a prime $q\geq 5$.
+      The discrete Heisenberg group is $G_q = \Heis_3(\mathbb{Z}/q\mathbb{Z})$ with generators
+      $X_q,Y_q,Z_q$.
+      The Weil representation at central character $e^{2\pi i c/q}$ is
+      $\rho_{q,c}\colon G_q\to\mathrm{U}(\mathbb{C}^q)$.
+      The BFS fingerprint energy at depth $n$ and character $c$ is
+      \[
+        \sigma_c(n) := \frac{\delta_{r_n}(c)}{|S_n|},
+      \]
+      where $r_n$ is the BFS radius at step $n$ and $|S_n|$ is the shell size.
+      The effective Hilbert space is $\Heff = \Sym^2(V_\rho)$, the spin-1 $\su(2)$-module
+      identified in Q7~\cite{Beau2026q7}.
+
+      The Q5a hypotheses [H1], [H2], [H-w], [H-E1], [C] govern the admissibility filter $\Pi_q$
+      and the Mosco convergence of the admissibility forms; see~\cite{Beau2026q5a} for precise
+      statements.
+      Hypothesis [U] (Q10 Definition~3.1~\cite{Beau2026q10}) asserts the existence of a universal
+      profile $\sigma^*(n)$ such that
+      \[
+        \max_{c\in(\mathbb{Z}/q\mathbb{Z})^\times}\,|\sigma_c(n) - \sigma^*(n)|
+        \;\leq\; \varepsilon(q)\,\sigma^*(n),
+      \]
+      uniformly for $n\leq n^*(q)$, with $\varepsilon(q)=O(q^{-1/2})$.
+      Hypothesis [U] is proved in U1~\cite{Beau2026u1}.
+
+    \subsection{Results of Q5b--Q10 in force}
+
+      The following are used without further proof.
+
+      \begin{itemize}
+        \item \textbf{Q5b Remark~3.3}~\cite{Beau2026q5b}: the coordinate $\tau$ on $\mathbb{R}_\tau$
+        is the BFS depth index $n$, i.e.\ the projective ordering parameter of~\cite{Beau2026pto}.
+        \item \textbf{Q5b Theorem~3.2}~\cite{Beau2026q5b}: the rescaled BFS metric space
+        $(G_q, n^{-1}d_w)$ converges to the Carnot--Carath\'eodory space
+        $(\Heis_3(\mathbb{R}), d_{\mathrm{CC}})$ in the Gromov--Hausdorff sense (Pansu~\cite{Pansu1989}).
+        \item \textbf{Q5b Theorem~5.2}~\cite{Beau2026q5b}: the effective operator on
+        $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$ is
+        $\Leff = -A_\tau\partial_\tau^2 + A_H\Delta_H$,
+        with $A_\tau$ from the projective ordering structure~\cite{Beau2026pto} and
+        $A_H$ from the admissibility weight [H-w].
+        \item \textbf{Q7}~\cite{Beau2026q7}: the equivariant bridge
+        $\phi\colon\Heff\xrightarrow{\sim}W_{\mathrm{sp}}$ is unique up to positive scalar;
+        $\Heff = \Sym^2(V_\rho)$ is the irreducible $\su(2)$-module of spin $1$.
+        \item \textbf{Q8}~\cite{BeauQ8}: $A_Z = \mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)} = 2$
+        (Casimir rigidity of the central direction).
+        \item \textbf{Q10 + U1}~\cite{Beau2026q10,Beau2026u1}: $A_H = 2$ and
+        $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$.
+      \end{itemize}
+
+  \section{Cascade Internalization}
+    \label{sec:internalization}
+
+    \subsection{The cascade increment operator}
+
+      The cascade is the map $U_{n+1} = \Pi\circ\sigma(U_n)$ acting on spectral data.
+      At each step $n$, the BFS fingerprint energy $\sigma_c(n)$ is updated.
+      Define the \emph{cascade increment operator}
+      \[
+        T\colon H_{\mathrm{eff}}\longrightarrow H_{\mathrm{eff}},
+        \qquad T\,\sigma_c(n) := \sigma_c(n+1).
+      \]
+      The operator $T$ acts on the same spectral space as the spatial observables:
+      its domain and codomain are both $\Heff = \Sym^2(V_\rho)$.
+
+      \begin{lemma}[Cascade Internalization]
+        \label{lem:internalization}
+        Under Q5b Remark~3.3 and Theorem~3.2~\cite{Beau2026q5b}, the formal derivative $\partial_\tau$
+        appearing in the effective operator $\Leff$ is the continuum limit of the cascade increment
+        operator $T$.
+        More precisely, in the Gromov--Hausdorff limit $q\to\infty$,
+        \[
+          T - \mathrm{Id} \;\longrightarrow\; \partial_\tau
+        \]
+        as a derivation on the spectral data, and $\partial_\tau$ acts on $\Sym^2(V_\rho)$.
+      \end{lemma}
+
+      \begin{proof}
+        By Q5b Remark~3.3~\cite{Beau2026q5b}, $\tau$ is identified with the BFS depth index $n$.
+        The continuum limit is established by Q5b Theorem~3.2~\cite{Beau2026q5b} (following
+        Pansu~\cite{Pansu1989}): in the limit $q\to\infty$ with $n = \lfloor r q^\alpha\rfloor$
+        for $\alpha < 1$, the discrete BFS metric space converges to the Carnot--Carath\'eodory
+        space $(\Heis_3(\mathbb{R}), d_{\mathrm{CC}})$ in the Gromov--Hausdorff sense.
+        Under this convergence, discrete differences $f(n+1) - f(n)$ pass to the continuum derivative
+        $\partial_\tau f(\tau)$ for any sequence $f(n)$ that is Lipschitz in the BFS metric.
+        The fingerprint energies $\sigma_c(n)$ are Lipschitz in $n$ within the pre-saturation window
+        $n\leq n^*(q)$ (Q5a Hypothesis [H-E1]~\cite{Beau2026q5a}).
+        Since $T\,\sigma_c(n) = \sigma_c(n+1)$ and the domain of $T$ is $\Heff = \Sym^2(V_\rho)$,
+        the derivation $\partial_\tau$ inherits the same domain.
+      \end{proof}
+
+      \begin{remark}
+        Lemma~\ref{lem:internalization} requires no hypothesis beyond Q5b and the Q5a Lipschitz
+        condition [H-E1].
+        It makes explicit an identification that was implicit in Q5b but left unstated:
+        the temporal derivative $\partial_\tau$ is not an external geometric direction imposed on
+        $\mathbb{R}_\tau$, but the infinitesimal generator of the admissible cascade, already
+        acting on $\Sym^2(V_\rho)$.
+      \end{remark}
+
+    \subsection{No new irreducible representation}
+
+      A direct consequence of Lemma~\ref{lem:internalization} is the following.
+
+      \begin{corollary}
+        \label{cor:no-new-rep}
+        As an operator on $\Sym^2(V_\rho)$, the cascade generator $\partial_\tau$ lies in
+        $\End(\Sym^2(V_\rho))$.
+        The tensor product $\mathbb{R}_\tau\otimes\Sym^2(V_\rho)$ decomposes as
+        $\mathbf{1}\otimes\Sym^2(V_\rho) \cong \Sym^2(V_\rho)$ as $\SU(2)$-modules,
+        where $\mathbf{1}$ denotes the trivial one-dimensional representation.
+        In particular, the temporal direction introduces no new irreducible representation of $\SU(2)$.
+      \end{corollary}
+
+      \begin{proof}
+        The cascade increment $T - \mathrm{Id}$ acts on $\Heff = \Sym^2(V_\rho)$ by definition.
+        Its continuum limit $\partial_\tau$ (Lemma~\ref{lem:internalization}) therefore acts on the same
+        module.
+        The continuous coordinate $\tau$ is a scalar parameter, so the $\tau$-sector carries the trivial
+        $\SU(2)$-representation $\mathbf{1}$.
+        Tensoring by $\mathbf{1}$ does not alter the $\SU(2)$-module structure:
+        $\mathbf{1}\otimes\Sym^2(V_\rho)\cong\Sym^2(V_\rho)$.
+      \end{proof}
+
+  \section{Asymptotic \texorpdfstring{$\SU(2)$}{SU(2)}-Equivariance of the Cascade Generator}
+    \label{sec:equivariance}
+
+    The following proposition reformulates [U] as a statement about representation-theoretic
+    equivariance of the cascade, replacing the analytic uniformity condition by a categorical one.
+
+    \begin{proposition}[$\SU(2)$-Equivariance of $T$]
+      \label{prop:equivariance}
+      Under the Q5a hypotheses and \textup{[U]} (proved in U1~\cite{Beau2026u1}), the cascade
+      increment operator $T$ satisfies
+      \[
+        T\circ\rho(g) = \rho(g)\circ T + O(q^{-1/2}),
+        \qquad\forall\,g\in\SU(2),
+      \]
+      as operators on $\Sym^2(V_\rho)$, uniformly for $n\leq n^*(q)$.
+      In the limit $q\to\infty$, $T$ is $\SU(2)$-equivariant.
+    \end{proposition}
+
+    \begin{proof}
+      Hypothesis [U] asserts
+      $\max_{c}|\sigma_c(n) - \sigma^*(n)| \leq \varepsilon(q)\,\sigma^*(n)$
+      with $\varepsilon(q) = O(q^{-1/2})$.
+      The increment satisfies
+      \[
+        T\,\sigma_c(n) - \sigma^*(n+1)
+        = \sigma_c(n+1) - \sigma^*(n+1)
+        \;\leq\; \varepsilon(q)\,\sigma^*(n+1).
+      \]
+      Since $\sigma^*(n)$ is $c$-independent, it is invariant under the $\SU(2)$-action on characters
+      (which permutes $c\in(\mathbb{Z}/q\mathbb{Z})^\times$).
+      For any $g\in\SU(2)$ acting as a permutation $\pi_g$ on characters,
+      \begin{align*}
+        \bigl\|T(\rho(g)\,\sigma_c(n)) - \rho(g)(T\,\sigma_c(n))\bigr\|
+        &= \bigl\|\sigma_{\pi_g(c)}(n+1) - \sigma_{\pi_g(c)}(n+1)\bigr\|
+        \;\leq\; 2\varepsilon(q)\,\sigma^*(n+1).
+      \end{align*}
+      As $\varepsilon(q)\to 0$, this bound vanishes, giving asymptotic equivariance.
+    \end{proof}
+
+    \begin{remark}
+      Proposition~\ref{prop:equivariance} is the representation-theoretic reading of [U].
+      Analytically, [U] asserts uniform $c$-independence of the spectral profiles.
+      Categorically, it asserts that the cascade morphism $T$ commutes with the $\SU(2)$-action
+      in the limit.
+      These are equivalent statements; the categorical reading is what enters the Schur argument.
+    \end{remark}
+
+  \section{Schur Rigidity and Proof of Theorem~\ref{thm:main}}
+    \label{sec:schur}
+
+    \subsection{The Schur argument}
+
+      \begin{proposition}[Uniqueness of the invariant quadratic form]
+        \label{prop:schur}
+        Let $V = \Sym^2(V_\rho)$ be the irreducible $\su(2)$-module of spin $1$.
+        Every $\SU(2)$-equivariant quadratic form $Q\colon V\to\mathbb{R}$ is of the form
+        \[
+          Q = \alpha\,\mathcal{C}_{\su(2)}\big|_V,
+          \qquad\alpha\in\mathbb{R}.
+        \]
+      \end{proposition}
+
+      \begin{proof}
+        By Schur's lemma, every $G$-equivariant endomorphism of an irreducible representation is
+        a scalar multiple of the identity.
+        The quadratic form $Q$ defines a $\SU(2)$-equivariant symmetric bilinear form on $V$,
+        hence an equivariant map $V\to V^*\cong V$ (the isomorphism using the Killing form).
+        Since $V = \Sym^2(V_\rho)$ is irreducible of spin $1$ (Q7~\cite{Beau2026q7}),
+        this map is a scalar, say $\alpha\,\mathrm{Id}$.
+        The unique normalisation-invariant scalar is the Casimir eigenvalue
+        $\mathcal{C}_{\su(2)}|_V = 2$ (Q8~\cite{BeauQ8}).
+      \end{proof}
+
+    \subsection{Proof of Theorem~\ref{thm:main}}
+
+      \begin{proof}[Proof of Theorem~\ref{thm:main}]
+        The effective co-metric coefficient $A_\tau$ is the coefficient of $k_\tau^2$ in the principal
+        symbol $\sigma_2(\Leff)$ of the effective operator (Q5b Theorem~5.2~\cite{Beau2026q5b}).
+        It is therefore the normalisation scalar of the quadratic form on the $\tau$-sector of
+        $T^*(\mathbb{R}_\tau\times\Heis_3(\mathbb{R}))$.
+
+        \emph{Step~1 (Internalization).}
+        By Lemma~\ref{lem:internalization}, $\partial_\tau$ is the continuum limit of $T$ acting on
+        $\Heff = \Sym^2(V_\rho)$.
+        By Corollary~\ref{cor:no-new-rep}, the $\tau$-sector carries the trivial $\SU(2)$-representation
+        $\mathbf{1}$, and the full $\tau$-module is $\mathbf{1}\otimes\Sym^2(V_\rho)\cong\Sym^2(V_\rho)$.
+
+        \emph{Step~2 (Equivariance).}
+        By Proposition~\ref{prop:equivariance}, $T$ is asymptotically $\SU(2)$-equivariant under [U].
+        In the limit $q\to\infty$, the quadratic form defined by $A_\tau k_\tau^2$ on the $\tau$-sector
+        must be $\SU(2)$-invariant.
+
+        \emph{Step~3 (Schur).}
+        By Proposition~\ref{prop:schur}, every $\SU(2)$-invariant quadratic form on $\Sym^2(V_\rho)$
+        is $\alpha\,\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)}$ for some scalar $\alpha$.
+
+        \emph{Step~4 (Normalisation).}
+        The bridge $\phi\colon\Heff\xrightarrow{\sim}W_{\mathrm{sp}}$ of Q7~\cite{Beau2026q7} is unique
+        up to positive scalar, with normalisation fixed by the Casimir eigenvalue
+        $\mathcal{C}_{\su(2)}|_{\Sym^2(V_\rho)} = 2$ (Q8~\cite{BeauQ8}).
+        Since $\partial_\tau$ is the continuum limit of the same cascade $T$ that enters the spatial bridge
+        (Step~1), the scalar $\alpha$ is the same in both sectors.
+        Q8 establishes $\alpha = 1$ for the spatial sectors (giving $A_Z = A_H = 2$).
+        Therefore $\alpha = 1$ in the $\tau$-sector as well, and $A_\tau = \mathcal{C}_{\su(2)} = 2$.
+      \end{proof}
+
+  \section{Consequences}
+    \label{sec:consequences}
+
+    \subsection{Closure of the effective metric}
+
+      \begin{corollary}[Isotropic Lorentzian metric]
+        \label{cor:metric}
+        Under the Q5a hypotheses and \textup{[U]}, the effective co-metric on
+        $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$ is
+        \[
+          g^{\mu\nu} = 2\,\eta^{\mu\nu},
+          \qquad\eta = \mathrm{diag}(-1,+1,+1,+1),
+        \]
+        of Lorentzian signature $(-,+,+,+)$, with no free parameter.
+        After absorbing the conformal factor $\Omega^2 = 2$ into the normalisation of the propagation
+        speed $c$ (replacing $c$ by $c/\sqrt{2}$), the effective metric is exactly Minkowski.
+      \end{corollary}
+
+      \begin{proof}
+        Combine Theorem~\ref{thm:main} ($A_\tau = 2$) with Q10~\cite{Beau2026q10} ($A_H = 2$) and
+        Q8~\cite{BeauQ8} ($A_Z = 2$).
+        The Lorentzian signature follows from Q5b Theorem~6.1~\cite{Beau2026q5b}.
+      \end{proof}
+
+      \begin{remark}[Structural significance of the conformal factor $2$]
+        The value $2$ is not a choice of units.
+        It is forced by the eigenvalue of the $\su(2)$-Casimir on the spin-$1$ module
+        $\Sym^2(V_\rho)$, which is the unique irreducible representation compatible with the
+        admissibility constraints (Q7~\cite{Beau2026q7}).
+        The same integer governs all four metric components: two horizontal Heisenberg directions
+        (Q10), the central Heisenberg direction (Q8), and the temporal direction (this paper).
+        This uniform emergence from a single representation-theoretic datum is the structural
+        content of the metric closure.
+      \end{remark}
+
+    \subsection{Closure of Q5b-O3}
+
+      \begin{corollary}[Resolution of Q5b-O3]
+        Open problem Q5b-O3 of~\cite{Beau2026q5b}---\emph{identify $A_\tau$ from the projective
+        temporal ordering data}---is closed: $A_\tau = 2$, derived from the cascade internalization
+        lemma, [U], and Q8.
+      \end{corollary}
+
+    \subsection{The complete derivation chain}
+
+      The closure of the effective metric is now traced through the following chain,
+      where each arrow represents a proved theorem or lemma:
+      \begin{center}
+        \begin{tabular}{cl}
+          Foundation~\cite{Beau2026m}       & time $=$ projective irréversible ordering \\
+          $\downarrow$                       & \\
+          Q5b Remark~3.3~\cite{Beau2026q5b} & $\tau \leftrightarrow n$ (BFS depth) \\
+          $\downarrow$                       & \\
+          Lemma~\ref{lem:internalization}    & $\partial_\tau \leftrightarrow T$ (cascade generator) \\
+          $\downarrow$                       & \\
+          [U] + U1~\cite{Beau2026u1}         & $T$ is $\SU(2)$-equivariant \\
+          $\downarrow$                       & \\
+          Proposition~\ref{prop:schur}       & unique $\SU(2)$-invariant form on $\Sym^2(V_\rho)$ \\
+          $\downarrow$                       & \\
+          Q8~\cite{BeauQ8}                   & Casimir normalisation $= 2$ \\
+          $\downarrow$                       & \\
+          Theorem~\ref{thm:main}             & $g^{\mu\nu} = 2\,\eta^{\mu\nu}$.
+        \end{tabular}
+      \end{center}
+
+    \subsection{Programme-level closure}
+
+      With $A_\tau = 2$ established, the effective geometry programme Q5a--Q11 is complete:
+
+      \begin{itemize}
+        \item \textbf{Q5a}~\cite{Beau2026q5a}: admissibility weight $A$; Q5a hypotheses
+        [H1], [H2], [H-w], [H-E1], [C].
+        \item \textbf{Q5b}~\cite{Beau2026q5b}: BFS--Carnot convergence; effective operator
+        $\Leff$ on $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$; Lorentzian signature.
+        \item \textbf{Q7}~\cite{Beau2026q7}: bridge $\phi\colon\Heff\xrightarrow{\sim}W_{\mathrm{sp}}$;
+        $\SU(2)$ rigidity.
+        \item \textbf{Q8}~\cite{BeauQ8}: $A_Z = 2$ (Casimir rigidity, central direction).
+        \item \textbf{Q9}~\cite{Beau2026q9}: [H-lift] proved; lifting is unconditional.
+        \item \textbf{Q10}~\cite{Beau2026q10}: $A_H = 2$ (asymptotic spatial isotropy, [U]).
+        \item \textbf{U1}~\cite{Beau2026u1}: [U] proved with rate $O(q^{-1/2})$.
+        \item \textbf{Q11 (this paper)}: $A_\tau = 2$; $g^{\mu\nu} = 2\,\eta^{\mu\nu}$; Q5b-O3 closed.
+      \end{itemize}
+
+  \section{Summary and Open Problems}
+    \label{sec:summary}
+
+    \subsection{What this paper establishes}
+
+      \begin{enumerate}
+        \item The temporal coordinate $\tau$ is the BFS depth index $n$ (Q5b Remark~3.3), and the
+        formal derivative $\partial_\tau$ is the continuum limit of the cascade increment operator
+        $T$ (Lemma~\ref{lem:internalization}).
+        This requires no hypothesis beyond Q5b and [H-E1].
+        \item Under [U] (U1~\cite{Beau2026u1}), the cascade generator $T$ is asymptotically
+        $\SU(2)$-equivariant (Proposition~\ref{prop:equivariance}), so $\partial_\tau$ acts on
+        $\Sym^2(V_\rho)$ without introducing a new irreducible.
+        \item Schur's lemma (Proposition~\ref{prop:schur}) and the Casimir normalisation of Q8
+        (Theorem~\ref{thm:main}) force $A_\tau = 2$.
+        \item The effective co-metric is $g^{\mu\nu} = 2\,\eta^{\mu\nu}$ with no free parameter
+        (Corollary~\ref{cor:metric}).
+        Q5b-O3 is closed.
+      \end{enumerate}
+
+    \subsection{Open problems}
+
+      \begin{description}
+        \item[Q11-O1 (Finite-$q$ cascade equivariance).]
+        Proposition~\ref{prop:equivariance} establishes $\SU(2)$-equivariance of $T$ only
+        asymptotically as $q\to\infty$.
+        An explicit finite-$q$ bound on the equivariance error, beyond the $O(q^{-1/2})$ estimate
+        inherited from [U], would sharpen the result.
+        \item[Q11-O2 (Unconditional closure).]
+        The identification $A_\tau = 2$ is conditional on [U].
+        Since [U] is proved in U1~\cite{Beau2026u1} under the Q5a hypotheses alone, the result
+        is unconditional modulo the Q5a hypotheses.
+        An independent derivation of $A_\tau$ from the Born--Infeld saturation data of~\cite{Beau2026pto}
+        would provide a complementary confirmation.
+        \item[Q11-O3 (Physical interpretation of the conformal factor).]
+        The conformal factor $\Omega^2 = 2$ absorbed into $c$ has a representation-theoretic origin
+        (Casimir eigenvalue on the spin-$1$ module).
+        Its possible observational consequences---for instance, as a correction to the effective
+        speed of light at finite $q$---remain to be explored.
+      \end{description}
+
+  \section*{Acknowledgements}
+
+    The author acknowledges the use of large language models as a supportive tool for refining
+    language, structure, and internal consistency during the development of this manuscript.
+
+    \newpage
+    \bibliography{cosmochrony-bibliography}
+    \bibliographystyle{plainnat}
+
+\end{document}
