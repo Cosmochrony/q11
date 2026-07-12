@@ -1,8 +1,8 @@
 # Q11 — Temporal Casimir Rigidity and Closure of the Effective Metric
 
 This repository contains the source of the **Q11 Cosmochrony paper**
-[*Temporal Casimir Rigidity and Closure of the Effective Metric: Identification of
-$A_\tau = 2$*](out/q11.pdf).
+*Temporal Casimir Rigidity and Closure of the Effective Metric: Identification of
+$A_\tau = 2$*].
 
 Paper Q5b leaves the temporal coefficient $A_\tau$ of the effective co-metric
 $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$ as the **sole remaining free parameter**
@@ -42,7 +42,6 @@ q11/
 
 ## Links
 
-- 📄 [Paper PDF](out/q11.pdf)
 - 🔗 DOI: [10.5281/zenodo.20098387](https://doi.org/10.5281/zenodo.20098387)
 - 🌐 Website: https://cosmochrony.org/science/emergent-geometry/q11/
 
