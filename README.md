@@ -8,6 +8,13 @@ Paper Q5b leaves the temporal coefficient $A_\tau$ of the effective co-metric
 $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$ as the **sole remaining free parameter**
 of the spectral geometry programme (open problem Q5b-O3). This paper closes it.
 
+**Status revision (version 1.1).** Q5a version 3.0 withdraws the convergence framework whose
+hypotheses this paper consumes; they are now the frozen, unestablished hypothesis **[H-F]**
+(Q9 1.1), and the spatial limit operator underlying the co-metric is the unestablished
+hypothesis **[H-L]** (Q5b 2.0). The algebraic content (cascade internalization,
+SU(2)-equivariance, Casimir rigidity) is unchanged; its reading as a metric coefficient is
+conditional on [H-L].
+
 ## Core Result
 
 $A_\tau = 2$, under the Q5a hypotheses and the spectral universality hypothesis [U] (U1),
