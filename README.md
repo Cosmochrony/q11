@@ -1,64 +1,77 @@
-# Q11 — Temporal Casimir Rigidity and Closure of the Effective Metric
+# Q11 — Toward a Temporal Scale for Emergent Spacetime
 
-This repository contains the source of the **Q11 Cosmochrony paper**
-*Temporal Casimir Rigidity and Closure of the Effective Metric: Identification of
-$A_\tau = 2$*].
+*Spatial SU(2) Invariance Leaves the Temporal Coefficient Free*, by Jérôme Beau.
 
-Paper Q5b leaves the temporal coefficient $A_\tau$ of the effective co-metric
-$g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$ as the **sole remaining free parameter**
-of the spectral geometry programme (open problem Q5b-O3). This paper closes it.
+**Version 2.0.**
 
-**Status revision (version 1.1).** Q5a version 3.0 withdraws the convergence framework whose
-hypotheses this paper consumes; they are now the frozen, unestablished hypothesis **[H-F]**
-(Q9 1.1), and the spatial limit operator underlying the co-metric is the unestablished
-hypothesis **[H-L]** (Q5b 2.0). The algebraic content (cascade internalization,
-SU(2)-equivariance, Casimir rigidity) is unchanged; its reading as a metric coefficient is
-conditional on [H-L].
+## Result and scope
 
-## Core Result
+An emergent Lorentzian co-metric on $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$ carries a temporal
+coefficient $A_\tau$ and spatial coefficients; a four-dimensional spacetime needs their relative normalisation.
+The paper determines what invariance under a spatial $\mathrm{SU}(2)$ action contributes to it.
 
-$A_\tau = 2$, under the Q5a hypotheses and the spectral universality hypothesis [U] (U1),
-in three steps:
+- **Theorem 1.1 (proved).** On the cotangent fibre $V = \mathbb{R}_\tau \oplus W$, with $\mathrm{SU}(2)$ acting
+  trivially on the ordering line and by the real spin-one representation on $W$ (hypothesis [ACT$_\tau$]), every
+  invariant symmetric bilinear form is $\alpha\,k_\tau^2 + \beta\,Q_{\mathrm{sp}}$ with $\alpha$ and $\beta$
+  independent. Invariance forbids mixed temporal–spatial terms (the assumption of Q8 Corollary 6.1 is thereby
+  derived for an invariant symbol) but relates the two scalars by no equation: $A_H = 2\lambda$ gives no value of
+  $A_\tau$, in particular not $A_\tau = 2$.
+- **Proposition 5.2 (proved).** For every linear $\mathrm{SU}(2)$ action on a real four-dimensional space, the
+  invariant forms are either all definite (the realified spin-$\tfrac12$ case) or form a family of dimension at least
+  two, so no $\mathrm{SU}(2)$-invariance condition fixes a Lorentzian co-metric up to an overall factor.
+- **Modelling identification 3.1.** The ordering coordinate is $\tau = n\,\Delta\tau$ (BFS depth times a free step);
+  the ordering derivative is the limit of $(T - \mathrm{Id})/\Delta\tau$. This is a modelling input, not a lemma.
+- **Proposition 4.1 (proved).** Temporal rescalings commute with the spatial action and multiply $A_\tau$
+  ($A_\tau = a\,\Delta\tau^2$ for fixed discrete data), so no equivariance condition fixes the step.
+- **Corollary 6.1 (conditional).** Under [H-L], [H-lift] (Q5b), [T], [INV$^+$] (Q8) and an invariant symbol with a
+  negative ordering term, the co-metric is $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ with two independent
+  scales; a choice of temporal unit turns it into $2\lambda\,\eta^{\mu\nu}$.
+- **Corollary 6.3.** The temporal half of Q5b-O3 is equivalent to one datum coupling the temporal and spatial
+  normalisations (for instance $\Delta\tau$ in spatial units).
 
-1. **Cascade internalization lemma**: the temporal coordinate $\tau$ (BFS depth index $n$)
-   has $\partial_\tau$ as the continuum limit of the cascade increment operator
-   $T:\sigma_c(n)\mapsto\sigma_c(n+1)$, by the Carnot–Carathéodory convergence of Q5b (Pansu).
-2. **[U]** (proved in U1) makes $T$ asymptotically $\mathrm{SU}(2)$-equivariant, so
-   $\partial_\tau$ acts on $\operatorname{Sym}^2(V_\rho)$ without new irreducibles.
-3. **Schur's lemma** forces the invariant form to be the Casimir $2\cdot\mathrm{Id}$; Q8 fixes
-   the normalisation to unity.
+The paper closes a derivation route, not the possibility $A_\tau = 2$. Candidate sources of the coupling datum
+(a saturated capacity bound, the unit advance of the BFS front) are listed as exploratory proposals.
 
-The effective co-metric is therefore uniquely $g^{\mu\nu} = 2\,\eta^{\mu\nu}$ — **no free
-parameter remains**. The temporal direction is the continuum image of the cascade depth, not
-an additional geometric axis.
+**Interpretive outlook (a reading, not a result):** spatial isotropy and the unit of time are separate pieces of
+information; the rate at which projective ordering advances relative to spatial relational distance, which a
+kinematic reading would call the invariant speed, is an independent datum that the representation theory of space
+alone does not supply.
 
 ## Keywords
 
-Temporal coordinate, Casimir rigidity, effective co-metric, Carnot–Carathéodory,
-Schur's lemma, SU(2) equivariance, spectral universality.
+Effective co-metric, temporal normalisation, Schur's lemma, invariant quadratic forms, su(2) spin-one module, real and
+quaternionic representations, Lorentzian signature, temporal ordering.
 
-## Repository Contents
+## Build
+
+```bash
+bash compile.sh
+```
+
+The PDF is written to `out/q11.pdf` (git-ignored).
+
+## Repository contents
 
 ```
 q11/
-├── tex/         # LaTeX sources (main + cosmochrony-bibliography.bib)
-├── out/         # Compiled paper PDF (q11.pdf)
+├── tex/         # LaTeX source and bibliographies
+├── out/         # Build output (generated by compile.sh, git-ignored)
+├── compile.sh
 ├── zenodo.json  # Zenodo deposition metadata
 └── README.md
 ```
 
 ## Links
 
-- 🔗 DOI: [10.5281/zenodo.20098387](https://doi.org/10.5281/zenodo.20098387)
-- 🌐 Website: https://cosmochrony.org/science/emergent-geometry/q11/
+- DOI (concept, resolves to the latest version): [10.5281/zenodo.20098387](https://doi.org/10.5281/zenodo.20098387)
+- Website: https://cosmochrony.org/science/emergent-geometry/q11/
 
 ## Citation
 
-> J. Beau, *Temporal Casimir Rigidity and Closure of the Effective Metric: Identification
-> of $A_\tau = 2$*, Zenodo, 2026. DOI: 10.5281/zenodo.20098387.
+> J. Beau, *Toward a Temporal Scale for Emergent Spacetime: Spatial SU(2) Invariance Leaves the Temporal Coefficient
+> Free*, Zenodo, 2026. DOI: 10.5281/zenodo.20098387.
 
 ## Acknowledgements
 
-Portions of the editorial refinement benefited from iterative interactions with large
-language models, used as analytical assistants. All claims and final formulations remain
-the sole responsibility of the author.
+Portions of the editorial refinement benefited from iterative interactions with large language models, used as
+analytical assistants. All claims and final formulations remain the sole responsibility of the author.
