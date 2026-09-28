@@ -24,8 +24,8 @@ The paper determines what invariance under a spatial $\mathrm{SU}(2)$ action con
   on $f(n) = F(n\,\Delta\tau)$ the increment $(T - \mathrm{Id})f/\Delta\tau$ equals
   $\partial_\tau F + O(\Delta\tau)$.
   This is a modelling input, not a lemma.
-- **Proposition 4.1 (proved).** Temporal rescalings commute with any action trivial on the ordering line and multiply $A_\tau$
-  ($A_\tau = a\,\Delta\tau^2$ for fixed discrete data), so no equivariance condition fixes the step.
+- **Proposition 4.1 (proved).** Temporal rescalings commute with any action trivial on the ordering line and
+  multiply $A_\tau$ ($A_\tau = a\,\Delta\tau^2$ for fixed discrete data), so no equivariance condition fixes the step.
 - **Corollary 6.1 (conditional).** Under [H-L], [H-lift] (Q5b), [T], [INV$^+$] (Q8) and an invariant symbol with a
   negative ordering term, the co-metric is $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ with two independent
   scales; a choice of temporal unit turns it into $2\lambda\,\eta^{\mu\nu}$.
