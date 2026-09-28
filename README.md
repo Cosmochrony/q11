@@ -17,16 +17,19 @@ The paper determines what invariance under a spatial $\mathrm{SU}(2)$ action con
   derived for an invariant symbol) but relates the two scalars by no equation: $A_H = 2\lambda$ gives no value of
   $A_\tau$, in particular not $A_\tau = 2$.
 - **Proposition 5.2 (proved).** For every linear $\mathrm{SU}(2)$ action on a real four-dimensional space, the
-  invariant forms are either all definite (the realified spin-$\tfrac12$ case) or form a family of dimension at least
+  invariant forms are either the multiples of one definite form (the realified spin-$\tfrac12$ case) or a family of
+  dimension at least
   two, so no $\mathrm{SU}(2)$-invariance condition fixes a Lorentzian co-metric up to an overall factor.
 - **Modelling identification 3.1.** The ordering coordinate is $\tau = n\,\Delta\tau$ (BFS depth times a free step);
-  the ordering derivative is the limit of $(T - \mathrm{Id})/\Delta\tau$. This is a modelling input, not a lemma.
-- **Proposition 4.1 (proved).** Temporal rescalings commute with the spatial action and multiply $A_\tau$
+  on $f(n) = F(n\,\Delta\tau)$ the increment $(T - \mathrm{Id})f/\Delta\tau$ equals
+  $\partial_\tau F + O(\Delta\tau)$.
+  This is a modelling input, not a lemma.
+- **Proposition 4.1 (proved).** Temporal rescalings commute with any action trivial on the ordering line and multiply $A_\tau$
   ($A_\tau = a\,\Delta\tau^2$ for fixed discrete data), so no equivariance condition fixes the step.
 - **Corollary 6.1 (conditional).** Under [H-L], [H-lift] (Q5b), [T], [INV$^+$] (Q8) and an invariant symbol with a
   negative ordering term, the co-metric is $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ with two independent
   scales; a choice of temporal unit turns it into $2\lambda\,\eta^{\mu\nu}$.
-- **Corollary 6.3.** The temporal half of Q5b-O3 is equivalent to one datum coupling the temporal and spatial
+- **Remark 6.3.** The temporal half of Q5b-O3 amounts to one datum coupling the temporal and spatial
   normalisations (for instance $\Delta\tau$ in spatial units).
 
 The paper closes a derivation route, not the possibility $A_\tau = 2$. Candidate sources of the coupling datum

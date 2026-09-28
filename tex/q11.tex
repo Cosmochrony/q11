@@ -60,10 +60,12 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
     The ratio $A_\tau/A_H$ is therefore unconstrained, and a spatial normalisation $A_H = 2\lambda$ yields no value
     of $A_\tau$, in particular not $A_\tau = 2$.
     The conclusion does not depend on the chosen action: for every linear $\SU(2)$ action on a four-dimensional real
-    space, the invariant forms are either all definite or form a family of dimension at least two, so no
+    space, the invariant forms are either the multiples of one definite form or a family of dimension at least two,
+    so no
     $\SU(2)$-invariance condition fixes a Lorentzian co-metric up to an overall factor.
     With the ordering parameter identified with breadth-first depth through an explicit free step $\Delta\tau$,
-    temporal rescalings commute with every such action and move the ratio, so equivariance cannot fix it either.
+    temporal rescalings commute with every action that is trivial on the ordering line and move the ratio, so
+    equivariance cannot fix it either.
     The value $A_\tau = 2$ obtained from the Casimir eigenvalue is therefore not derived on this route: the result
     closes a derivation route, not the possibility $A_\tau = 2$.
     The missing element is named: one datum coupling the temporal and spatial normalisations, such as the step
@@ -135,15 +137,17 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
           $-\alpha/\beta$ takes every positive value.
           \item[(c)] If the principal symbol of a full-rank extension of~\eqref{eq:metric-intro} is invariant, its
           co-metric in an adapted frame is $\mathrm{diag}(-A_\tau, A_H, A_H, A_H)$ with $A_\tau = -\alpha$ and
-          $A_H = \beta$.
+          $A_H = \beta$; here $A_H$ denotes the common spatial entry, which is the horizontal coefficient
+          of~\eqref{eq:metric-intro} when the adapted frame is identified with the left-invariant frame
+          (the premises [T] and [ADAPT] of Q7 and Q8).
           Fixing $A_H$, for instance $A_H = 2\lambda$, imposes no condition on $A_\tau$; in particular invariance
           does not yield $A_\tau = 2$.
         \end{enumerate}
       \end{theorem}
 
       The conclusion is not an artefact of [ACT$_\tau$]: Proposition~\ref{prop:any-action} shows that for every linear
-      $\SU(2)$ action on a four-dimensional real space the invariant forms are either all definite or form a family
-      of dimension at least two.
+      $\SU(2)$ action on a four-dimensional real space the invariant forms are either the multiples of one definite
+      form or a family of dimension at least two.
       Theorem~\ref{thm:main} does not show that $A_\tau = 2$ is false.
       It shows that spatial $\SU(2)$ invariance does not derive it, and that a datum coupling the temporal and spatial
       normalisations is required.
@@ -195,19 +199,19 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
       Fix a prime $q\geq 5$.
       The discrete Heisenberg group is $G_q = \Heis_3(\mathbb{Z}/q\mathbb{Z})$ with generators $X_q,Y_q,Z_q$, and
       $n$ denotes breadth-first (BFS) depth on its Cayley graph.
-      The fingerprint energy at depth $n$ and central character $c$ is the real number
+      The fingerprint observable of Q10~\cite{Beau2026q10} at depth $n$ for a block $b$ is
       \[
-        \sigma_c(n) := \frac{\delta_{r_n}(c)}{|S_n|},
+        \sigma_b(n) := \frac{\delta r_n(b)}{|S_n|},
       \]
-      where $r_n$ is the BFS radius at step $n$ and $|S_n|$ is the shell size; for fixed $c$ it is a real sequence
-      indexed by $n$.
+      where $\delta r_n(b)$ is the increase, from shell $n-1$ to shell $n$, of the dimension of the Gram--Schmidt span
+      of the Weil fingerprint vectors of block $b$, and $|S_n|$ is the shell size.
+      It is a rank increment, not a spectral quantity; for fixed $b$ it is a real sequence indexed by $n$.
 
       The spatial sector $W$ is a real three-dimensional space carrying the real spin-one representation of $\SU(2)$,
       that is, the standard action of $\mathrm{SO}(3)$ on $\mathbb{R}^3$ through the covering
       $\SU(2)\to\mathrm{SO}(3)$.
-      This is the adjoint action on the real spatial sector supplied as [ACT] in Q8~\cite{BeauQ8}; its
-      identification with the measured spatial directions is a hypothesis supplied by no source
-      (Q7~\cite{Beau2026q7}).
+      That the real spatial sector carries this adjoint action is the hypothesis [ACT] of Q7~\cite{Beau2026q7}
+      (Q7 Lemma~4.3 and Remark~4.6), also used by Q8~\cite{BeauQ8}; no source supplies it.
       We write $\Qsp$ for the invariant positive form on $W$ normalised to $k_x^2 + k_y^2 + k_z^2$ in an adapted
       orthonormal frame.
 
@@ -229,7 +233,7 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
         \item \textbf{Q5b Remark~3.3}~\cite{Beau2026q5b}: the product $\mathbb{R}_\tau\times\Heis_3(\mathbb{R})$
         is a modelling choice separating the ordering index (BFS depth) from the spatial factor; neither the ordering
         direction nor its coefficient is derived there.
-        \item \textbf{Q5b Theorem~3.2}~\cite{Beau2026q5b}: for $n = \lfloor q^\alpha\rfloor$ with $0<\alpha<1/2$,
+        \item \textbf{Q5b Theorem~3.2}~\cite{Beau2026q5b}: for $n = \lfloor q^\gamma\rfloor$ with $0<\gamma<1/2$,
         the rescaled space $(G_q, n^{-1}d_w)$ restricted to balls of radius $R$ converges in the Gromov--Hausdorff
         sense to a ball of the sub-Finsler Carnot--Carath\'eodory space on $\Heis_3(\mathbb{R})$, following
         Pansu~\cite{Pansu1983}.
@@ -239,15 +243,18 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
         \item \textbf{Q5b Theorem~6.1}~\cite{Beau2026q5b}: under the hyperbolicity hypothesis
         [H-hyp$_{\mathrm{red}}$], the non-degenerate block $(-A_\tau, A_H, A_H)$ has signature $(-,+,+)$ with $\tau$
         time-like; a diagonal extension with positive central entry would have signature $(-,+,+,+)$.
-        \item \textbf{Q7}~\cite{Beau2026q7}: an equivariant bridge from the supplied spinor carrier to the spatial
-        sector is unique up to one non-zero complex scalar when it exists; its existence is not derived.
+        \item \textbf{Q7}~\cite{Beau2026q7}: an equivariant map from the spin-one module $\Sym^2(V_\rho)$ to the
+        complexified spatial sector is zero or an isomorphism, unique up to one non-zero complex scalar (Q7
+        Lemma~4.3); once [ACT] is supplied, non-zero intertwiners exist (Q7 Remark~4.4).
+        What is open is the geometric target: a positive rank-three spatial form with [ACT], [INV] and [ADAPT]
+        (Q7 Conjecture~4.7).
         \item \textbf{Q8}~\cite{BeauQ8}: invariant Hermitian forms on the spin-one module form one ray, and the
         Casimir eigenvalue $2$ is the point of that ray fixed by a normalisation of the generators (Q8 Lemma~4.1);
         under [T] and [INV$^+$], $A_H = A_Z = 2\lambda$ with $\lambda>0$ undetermined (Q8 Proposition~4.2);
         equality of horizontal and central coefficients selects a length scale (Q8 Remark~5.2).
         \item \textbf{Q9}~\cite{Beau2026q9}: [H-lift] is a supplied hypothesis (Q9 Hypothesis~1.1).
         \item \textbf{Q10}~\cite{Beau2026q10} and \textbf{U1}~\cite{Beau2026u1}: the spectral universality hypothesis
-        [U] (Q10 Definition~3.1) bounds the spread of the fingerprint observable across characters; it is open, and
+        [U] (Q10 Definition~3.1) bounds the spread of the fingerprint observable across blocks; it is open, and
         U1 proves an obstruction to one proposed route (U1 Theorem~1.1).
         Q10 derives no coefficient value.
       \end{itemize}
@@ -258,8 +265,8 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
 
     \subsection{The ordering increment and its step}
 
-      Let $T$ denote the shift on real sequences indexed by depth, $(Tf)(n) := f(n+1)$; for fixed $c$,
-      $T\sigma_c(n) = \sigma_c(n+1)$.
+      Let $T$ denote the shift on real sequences indexed by depth, $(Tf)(n) := f(n+1)$; for fixed $b$,
+      $T\sigma_b(n) = \sigma_b(n+1)$.
 
       \begin{modelling}[Ordering parameter and ordering derivative]
         \label{lem:internalization}
@@ -268,7 +275,7 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
           \tau = n\,\Delta\tau,
         \]
         where $\Delta\tau > 0$ is the temporal step assigned to one cascade step.
-        For a real sequence $f$ on the depth window that is the restriction of a $C^2$ function $F$ on $\Rtau$,
+        For a real sequence $f$ on the depth window that is the restriction of a $C^4$ function $F$ on $\Rtau$,
         $f(n) = F(n\,\Delta\tau)$, the ordering derivative is $\partial_\tau F$, and
         \[
           \frac{(T - \mathrm{Id})f}{\Delta\tau}(n) = \partial_\tau F(n\,\Delta\tau) + O(\Delta\tau).
@@ -345,9 +352,9 @@ Spatial SU(2) Invariance Leaves the Temporal Coefficient Free\\[6pt]
 
     \begin{remark}
       Spectral universality [U] (Q10 Definition~3.1~\cite{Beau2026q10}) is a statement about the spread of the
-      fingerprint observable across central characters.
+      fingerprint observable across blocks.
       It is open, and U1~\cite{Beau2026u1} proves an obstruction to one proposed route to it.
-      It defines no $\SU(2)$ action on characters.
+      It defines no $\SU(2)$ action on blocks or characters.
       By Proposition~\ref{prop:equivariance}, even an $\SU(2)$-equivariant ordering increment would leave
       $\Delta\tau$ free, so [U], whether or not it holds, does not bear on $A_\tau$ along this route.
     \end{remark}
@@ -414,8 +421,8 @@ For fixed $\beta = 2\lambda$ every $\alpha<0$ gives an invariant Lorentzian symb
 
       \begin{proposition}[No $\SU(2)$ action fixes a Lorentzian form up to scale]
         \label{prop:any-action}
-        Let $\SU(2)$ act linearly on a real four-dimensional space $U$.
-        Then exactly one of the following holds.
+        Let $\SU(2)$ act linearly and continuously on a real four-dimensional space $U$.
+        Then $U$ is equivalent to exactly one of the following.
         \begin{enumerate}
           \item[(i)] $U$ is the realification of the spin-$\tfrac12$ representation, and every invariant symmetric
           bilinear form is a real multiple of one positive definite form.
@@ -491,20 +498,22 @@ The value $2$ is the Casimir eigenvalue of the spin-one module in one normalisat
 What invariance leaves as the only non-conventional quantity is the ratio of the temporal and spatial scalars,
 expressed in units fixed independently in each sector.
 In a kinematic reading, in which $\tau$ measures time and the spatial coordinates measure length, the characteristic
-cone of $-A_\tau\partial_\tau^2 + A_H\Delta$ propagates at speed $(A_H/A_\tau)^{1/2}$, and the ratio is then the
+cone of $-A_\tau\partial_\tau^2 + A_H\Delta$, with $\Delta$ the Laplacian of the spatial form $\Qsp$,
+propagates at speed $(A_H/A_\tau)^{1/2}$, and the ratio is then the
 square of an invariant speed.
 That reading requires the metric and kinematic interpretation of both coordinates and is not used in the theorems.
       \end{remark}
 
     \subsection{Status of Q5b-O3}
 
-      \begin{corollary}[Status of Q5b-O3]
-Under the hypotheses of Corollary~\ref{cor:metric}, the temporal half of open problem Q5b-O3 of~\cite{Beau2026q5b},
-identifying $A_\tau$, is equivalent to supplying one datum that couples the temporal and spatial normalisations, for
-instance the step $\Delta\tau$ expressed in spatial units or the ratio $A_\tau/A_H$.
+      \begin{remark}[Status of Q5b-O3]
+Under the hypotheses of Corollary~\ref{cor:metric}, and once the spatial scale $\lambda$ is fixed, the temporal half
+of open problem Q5b-O3 of~\cite{Beau2026q5b}, identifying $A_\tau$, amounts to supplying one datum that couples the
+temporal and spatial normalisations: the ratio $A_\tau/A_H$, or, for fixed discrete ordering data $a$
+(Proposition~\ref{prop:equivariance}(c)), the step $\Delta\tau$ expressed in spatial units.
 Invariance under any linear $\SU(2)$ action, with or without [U], does not supply it
 (Theorem~\ref{thm:main}, Propositions~\ref{prop:equivariance} and~\ref{prop:any-action}).
-      \end{corollary}
+      \end{remark}
 
     \subsection{The typed chain}
 
@@ -520,7 +529,7 @@ Invariance under any linear $\SU(2)$ action, with or without [U], does not suppl
           Corollary~\ref{cor:no-new-rep} & [ACT$_\tau$] from the product & proved \\
           Theorem~\ref{thm:main} & $\alpha\,k_\tau^2 + \beta\,\Qsp$, no mixed term & proved \\
           Proposition~\ref{prop:any-action} & any action on four dimensions & proved \\
-          Q8 Proposition~4.2~\cite{BeauQ8} & $A_H = A_Z = 2\lambda$, $\lambda$ free & proved \\
+          Q8 Proposition~4.2~\cite{BeauQ8} & $A_H = A_Z = 2\lambda$ & proved under [T], [INV$^+$] \\
           Q5b Theorem~5.2~\cite{Beau2026q5b} & rank-three co-metric & conditional \\
           Coupling datum & $\Delta\tau$ in spatial units & missing \\
         \end{tabular}
@@ -569,11 +578,12 @@ Invariance under any linear $\SU(2)$ action, with or without [U], does not suppl
         equivariance or invariance condition fixes the step (Proposition~\ref{prop:equivariance}, proved).
         \item Every invariant form on the fibre is $\alpha\,k_\tau^2 + \beta\,\Qsp$ with independent scalars and no
         mixed term; a spatial normalisation yields no value of $A_\tau$ (Theorem~\ref{thm:main}, proved).
-        \item For every linear $\SU(2)$ action on four dimensions, the invariant forms are all definite or form a family
+        \item For every linear $\SU(2)$ action on four dimensions, the invariant forms are the multiples of one definite
+        form or a family
         of dimension at least two (Proposition~\ref{prop:any-action}, proved).
         \item Under the inputs of Q5b and Q8, the co-metric is $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$
-        with two independent scales (Corollary~\ref{cor:metric}, conditional), and the temporal half of Q5b-O3 is
-        equivalent to one coupling datum.
+        with two independent scales (Corollary~\ref{cor:metric}, conditional), and the temporal half of Q5b-O3
+        amounts to one coupling datum.
       \end{enumerate}
 
       The paper closes a derivation route, not the possibility $A_\tau = 2$.
@@ -601,7 +611,8 @@ Invariance under any linear $\SU(2)$ action, with or without [U], does not suppl
         $\Delta\tau$ in spatial units, equivalently the ratio $A_\tau/A_H$.
         \item[Q11-O2 (Sign of the ordering term).]
         Invariance fixes neither the ratio nor the sign of $\alpha$ relative to $\beta$
-        (Theorem~\ref{thm:main}(b)); the Lorentzian sign currently enters through [H-hyp$_{\mathrm{red}}$].
+        (Theorem~\ref{thm:main}(b)); Q5b stipulates the Lorentzian sign, and [H-hyp$_{\mathrm{red}}$] makes it the only
+        sign compatible with a finite characteristic cone ordered by $\tau$ (Q5b Theorem~6.1 and Remark~6.2).
         Derive it from the ordering structure.
         \item[Q11-O3 (Front speed and symbol).]
         Relate the unit advance of the BFS front in word length to the principal symbol of a limit operator, taking into
