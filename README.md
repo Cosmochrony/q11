@@ -2,7 +2,8 @@
 
 *Spatial SU(2) Invariance Leaves the Temporal Coefficient Free*, by Jérôme Beau.
 
-**Version 2.0.**
+**Version 2.0, published** as [Zenodo record 23024499](https://zenodo.org/record/23024499); the concept DOI below
+resolves to this version.
 
 ## Result and scope
 
